@@ -91,14 +91,14 @@ app.post("/Login",upload.none(), async(request,response)=>{
 })
 
 
-app.listen(1435,()=>{
+app.listen(process.env.Port,()=>{
     console.log("port number 1435");
 })
 
 
 let connectToMB=async()=>{
     try {
-        await mongoose.connect("mongodb+srv://rohithachari11:rohithachari11@cluster0.tvnsedg.mongodb.net/RohithIndustries?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(process.env.DataBaseURL);
     console.log("connected to sucessfully");
     } catch (error) {
         console.log("unable to connect");
