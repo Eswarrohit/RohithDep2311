@@ -19,7 +19,7 @@ function Login() {
             body:dataToSend,
         }
 
-        let validateLoginData= await fetch("http://localhost:1435/Login",requestOptions);
+        let validateLoginData= await fetch("/Login",requestOptions);
         let vaildateObjectData=await validateLoginData.json();
         if(vaildateObjectData.status === "success"){
             dispatch({type:"Login",data:vaildateObjectData.data})

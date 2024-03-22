@@ -12,7 +12,7 @@ function Home() {
         <h1>Home</h1>
         <h2>{storeObj.userDetails.firstName}
         {storeObj.userDetails.lastName}</h2>
-        <img src={`http://localhost:1435/${storeObj.userDetails.profilePic}`}></img>
+        <img src={`/${storeObj.userDetails.profilePic}`}></img>
     </div>
   )
 }

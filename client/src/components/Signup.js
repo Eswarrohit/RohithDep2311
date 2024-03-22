@@ -33,7 +33,7 @@ let clickOnSignup= async()=>{
         headers:myHeader
     }
 
-    let signupJSONData= await fetch("http://localhost:1435/Signup",requestOptions);
+    let signupJSONData= await fetch("/Signup",requestOptions);
     let signupObjectData =await signupJSONData.json();
     console.log(signupObjectData);
 
@@ -59,7 +59,7 @@ myHeader.append("content-type","application/x-www-form-urlencoded")
     headers:myHeader
   }
 
-  let SignupData= await fetch("http://localhost:1435/Signup",requestOptions);
+  let SignupData= await fetch("/Signup",requestOptions);
   let SignupObjectData= await SignupData.json();
   console.log(SignupObjectData);
 
@@ -85,7 +85,7 @@ for(let i=0;i<profileInputRef.current.files.length; i++){
       body:dataToSend
     }
   
-    let SignupData= await fetch("http://localhost:1435/Signup",requestOptions);
+    let SignupData= await fetch("/Signup",requestOptions);
     let SignupObjectData= await SignupData.json();
     console.log(SignupObjectData);
   

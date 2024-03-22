@@ -3,6 +3,7 @@ const cors=require("cors");
 const mongoose=require("mongoose");
 const multer=require("multer");
 const dotenv = require("dotenv");
+const path = require("node:path");
 
 
 const storage = multer.diskStorage({
@@ -25,6 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 // app.use(express.static('uploads'));
 app.use('/uploads', express.static('uploads'));
+app.use(express.static(path.join(__dirname,"./client/build")));
 
 
 
@@ -54,7 +56,7 @@ app.post("/Signup",upload.single("profilePic"), async(request,response)=>{
     password:request.body.password,
     mobileNo:request.body.mobileNo,
     profilePic:request.file.path
-
+ 
  });
  
  await DetailsOFUser.insertMany([UserDetails]);
@@ -91,7 +93,7 @@ app.post("/Login",upload.none(), async(request,response)=>{
 })
 
 
-app.listen(process.env.Port,()=>{
+app.listen(process.env.Port, ()=>{
     console.log("port number 1435");
 })
 
